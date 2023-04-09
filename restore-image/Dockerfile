@@ -6,6 +6,8 @@ RUN mkdir /mysqlsh/temp
 
 USER 0
 RUN microdnf update && echo "[main]" > /etc/dnf/dnf.conf \
+    && microdnf install epel-release \
+    && microdns update \
     && microdnf install -y restic
 USER 2
 
