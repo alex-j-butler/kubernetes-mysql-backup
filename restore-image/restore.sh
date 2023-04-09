@@ -6,7 +6,5 @@ restic dump $SNAPSHOT_ID $SNAPSHOT_PATH | tar xvf -
 mysqlsh -h $SQL_HOST -p$SQL_PASS -u $SQL_USER --js <<EOF
   util.loadDump('/mysqlsh/temp/mysqlsh/backup',
                 { threads: 4,
-				  showProgress: true,
-				  consistent: true,
-				  compression: 'none'})
+				  showProgress: true})
 EOF
