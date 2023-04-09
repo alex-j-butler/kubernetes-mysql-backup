@@ -1,3 +1,5 @@
+TEMP_FOLDER="/mysqlsh/temp"
+
 # Dump restic to temp folder.
 cd $TEMP_FOLDER
 restic dump $SNAPSHOT_ID $SNAPSHOT_PATH | tar xvf -
@@ -8,5 +10,3 @@ mysqlsh -h $SQL_HOST -p$SQL_PASS -u $SQL_USER --js <<EOF
                 { threads: 4,
 				  showProgress: true})
 EOF
-
-sleep 10000

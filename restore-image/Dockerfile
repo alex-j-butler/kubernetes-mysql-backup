@@ -10,5 +10,5 @@ RUN mv /usr/bin/restic_0.15.1_linux_amd64 /usr/bin/restic \
     && chmod +x /usr/bin/restic
 USER 2
 
-COPY . /mysqlsh/
+COPY ./restore.sh /mysqlsh/
 ENTRYPOINT [ "bash", "/mysqlsh/restore.sh" ]
