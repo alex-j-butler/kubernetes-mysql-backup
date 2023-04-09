@@ -3,5 +3,5 @@
 FROM mysql/mysql-operator:8.0.32-2.0.8
 
 RUN mkdir /mysqlsh/temp
-COPY ./restore-image /mysqlsh/
-ENTRYPOINT [ "bash", "restore.sh" ]
+COPY . /mysqlsh/
+ENTRYPOINT [ "bash", "/mysqlsh/restore.sh" ]
