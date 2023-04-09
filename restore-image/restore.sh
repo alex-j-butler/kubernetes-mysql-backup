@@ -8,3 +8,5 @@ mysqlsh -h $SQL_HOST -p$SQL_PASS -u $SQL_USER --js <<EOF
                 { threads: 4,
 				  showProgress: true})
 EOF
+
+sleep 10000
