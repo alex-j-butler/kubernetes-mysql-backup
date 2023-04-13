@@ -11,7 +11,8 @@ if [ "$SQL_ALL_DATABASES" = 1 ] ; then
 	mysqlsh -h $SQL_HOST -p$SQL_PASS -u $SQL_USER --js <<EOF
 	util.loadDump('/mysqlsh/temp/mysqlsh/backup',
 					{ threads: 4,
-					showProgress: true })
+					showProgress: true,
+					excludeSchemas: ["mysql_innodb_cluster_metadata"] })
 EOF
 else
 	mysqlsh -h $SQL_HOST -p$SQL_PASS -u $SQL_USER --js <<EOF
