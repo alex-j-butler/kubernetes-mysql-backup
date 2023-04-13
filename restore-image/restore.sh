@@ -7,8 +7,6 @@ restic dump $SNAPSHOT_ID $SNAPSHOT_PATH | tar xvf -
 # Drop the sql schema we're restoring.
 mysqlsh -h $SQL_HOST -p$SQL_PASS -u $SQL_USER --js --recreate-schema -D $SQL_DATABASE
 
-SQL_ALL_DATABASES="0"
-
 if [ "$SQL_ALL_DATABASES" = 1 ] ; then
 	mysqlsh -h $SQL_HOST -p$SQL_PASS -u $SQL_USER --js <<EOF
 	util.loadDump('/mysqlsh/temp/mysqlsh/backup',
