@@ -13,7 +13,8 @@ if [ "$SQL_ALL_DATABASES" = 1 ] ; then
 					{ threads: 4,
 					showProgress: true,
 					excludeSchemas: ["mysql_innodb_cluster_metadata"],
-					loadUsers: true })
+					loadUsers: true,
+					ignoreExistingObjects: true })
 EOF
 else
 	mysqlsh -h $SQL_HOST -p$SQL_PASS -u $SQL_USER --js <<EOF
